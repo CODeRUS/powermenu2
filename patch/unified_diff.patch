@@ -1,5 +1,5 @@
 diff --git a/PowerKeyMenu.qml b/PowerKeyMenu.qml
-index c9a663e..08f55e4 100644
+index c9a663e..20cc088 100644
 --- a/usr/share/lipstick-jolla-home-qt5/powerkey/PowerKeyMenu.qml
 +++ b/usr/share/lipstick-jolla-home-qt5/powerkey/PowerKeyMenu.qml
 @@ -9,6 +9,7 @@ import org.nemomobile.dbus 2.0
@@ -17,7 +17,7 @@ index c9a663e..08f55e4 100644
 +    Connections {
 +        target: Lipstick.compositor.powerKeyLayer.edgeFilter
 +        onGestureCanceled: {
-+            if (Lipstick.compositor.powerKeyLayer.edgeFilter.progress > 0) {
++            if (Lipstick.compositor.powerKeyLayer.edgeFilter.progress > 0 && !Lipstick.compositor.powerKeyPressed && !Lipstick.compositor.appLayer.window) {
 +                Lipstick.compositor.setDisplayOff()
 +            }
 +        }

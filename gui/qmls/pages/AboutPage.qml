@@ -186,7 +186,7 @@ Page {
             }
 
             Label {
-                text: "Fancy menu on power key\nwritten by coderus in 0x7DF\nis dedicated to my beloved"
+                text: "Fancy menu on power key\nwritten by coderus in 0x7E0\nis dedicated to my beloved"
                 font.pixelSize: Theme.fontSizeMedium
                 x: Theme.paddingLarge
                 width: parent.width - Theme.paddingLarge * 2
