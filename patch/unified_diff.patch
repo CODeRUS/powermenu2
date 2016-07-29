@@ -1,16 +1,16 @@
 diff --git a/PowerKeyMenu.qml b/PowerKeyMenu.qml
-index c9a663e..20cc088 100644
+index 40929e3..470018f 100644
 --- a/usr/share/lipstick-jolla-home-qt5/powerkey/PowerKeyMenu.qml
 +++ b/usr/share/lipstick-jolla-home-qt5/powerkey/PowerKeyMenu.qml
-@@ -9,6 +9,7 @@ import org.nemomobile.dbus 2.0
- import com.jolla.lipstick 0.1
+@@ -9,6 +9,7 @@ import com.jolla.lipstick 0.1
  import org.freedesktop.contextkit 1.0
  import org.nemomobile.notifications 1.0 as SystemNotifications
+ import org.nemomobile.configuration 1.0
 +import org.coderus.powermenu 1.0
  
  SilicaListView {
      id: powerMenu
-@@ -78,79 +79,58 @@ SilicaListView {
+@@ -86,104 +87,59 @@ SilicaListView {
          category: "x-jolla.ambience.preview"
      }
  
@@ -61,41 +61,32 @@ index c9a663e..20cc088 100644
 +        onHeightChanged: powerMenu.contentY = 0 - headerItem.height
  
          Wallpaper {
--            anchors.fill: shutdownButton
+-            anchors.fill: shutdownOptions
 +            anchors.fill: column
              horizontalOffset: powerMenu.x
          }
  
--        PowerButton {
--            id: shutdownButton
+-        Row {
+-            id: shutdownOptions
 -
 -            width: powerMenu.width
 -            height: powerMenu.itemHeight
--
--            offset: lockButton.offset + height
--
 -            clip: powerTransition.running
 -            visible: Lipstick.compositor.powerKeyPressed
--
--            onClicked: dsmeDbus.call("req_shutdown", [])
--
--            iconSource: "image://theme/graphic-power-off"
--
 -            opacity: Math.max(0.0, Math.min(1.0,
 -                        (powerMenu.exposure - headerItem.y + powerMenu.contentY)
 -                        / headerItem.height))
--        }
 -
--        PowerButton {
--            id: lockButton
+-            PowerButton {
+-                id: shutdownButton
 -
--            width: powerMenu.width
--            height: powerMenu.itemHeight
+-                width: parent.width / (rebootButton.visible ? 2 : 1)
+-                height: parent.height
 -
--            clip: powerTransition.running
--            visible: !shutdownButton.visible || powerTransition.running
+-                offset: lockButton.offset + height
+-                onClicked: powerMenu.shutdown()
 -
--            onClicked: Lipstick.compositor.setDisplayOff()
+-                iconSource: "image://theme/graphic-power-off"
 +        Column {
 +            id: column
 +            width: parent.width
@@ -111,9 +102,19 @@ index c9a663e..20cc088 100644
 +                    Lipstick.compositor.appLayer.close()
 +                    Lipstick.compositor.powerKeyLayer.hide()
 +                }
-+            }
+             }
  
--            iconSource: "image://theme/graphic-display-blank"
+-            PowerButton {
+-                id: rebootButton
+-
+-                visible: rebootActionConfig.value
+-                width: parent.width/2
+-                height: parent.height
+-
+-                offset: lockButton.offset + height
+-                onClicked: powerMenu.reboot()
+-
+-                iconSource: "image://theme/graphic-reboot"
 +            TogglesArea {
 +                id: togglesArea
 +                height: togglesArea.contentHeight
@@ -121,11 +122,32 @@ index c9a663e..20cc088 100644
 +                editMode: controlRow1.editMode
 +                onHideWithCare: Lipstick.compositor.powerKeyLayer.hide()
  
--            opacity: shutdownButton.opacity
+-                ConfigurationValue {
+-                    id: rebootActionConfig
+-
+-                    key: "/desktop/jolla/reboot_action_enabled"
+-                    defaultValue: false
 +                Behavior on height {
 +                    NumberAnimation { duration: 200 }
-+                }
-+            }
+                 }
+             }
          }
+-
+-        PowerButton {
+-            id: lockButton
+-
+-            width: powerMenu.width
+-            height: powerMenu.itemHeight
+-
+-            clip: powerTransition.running
+-            visible: !shutdownButton.visible || powerTransition.running
+-
+-            onClicked: Lipstick.compositor.setDisplayOff()
+-
+-            iconSource: "image://theme/graphic-display-blank"
+-
+-            opacity: shutdownButton.opacity
+-        }
      }
  
+     delegate: Item {

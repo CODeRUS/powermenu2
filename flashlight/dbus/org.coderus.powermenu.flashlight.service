@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.coderus.powermenu.flashlight
+Exec=/usr/bin/invoker -s --type=generic /usr/bin/powermenu2-flashlight

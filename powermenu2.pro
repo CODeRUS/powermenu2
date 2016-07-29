@@ -2,6 +2,7 @@ TEMPLATE = subdirs
 SUBDIRS = \
     libpowermenutools \
     plugin \
+    flashlight \
     daemon \
     gui \
     patch \

@@ -5,14 +5,14 @@ Name:       powermenu2
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    PowerMenu 2
-Version:    1.0.7
+Version:    1.0.9
 Release:    1
 Group:      Qt/Qt
 License:    WTFPL
 URL:        https://openrepos.net/content/coderus/powermenu2
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
-Requires:   sailfish-version >= 2.0.0
+Requires:   sailfish-version >= 2.0.2
 Conflicts:  powermenu
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -32,7 +32,7 @@ Summary:    Ambience Powermenu2
 Group:      Qt/Qt
 License:    WTFPL
 Requires:   patchmanager
-Requires:   sailfish-version >= 2.0.0
+Requires:   sailfish-version >= 2.0.2
 Requires:   %{name} >= %{version}
 BuildArch:  noarch
 
@@ -67,6 +67,10 @@ if /sbin/pidof powermenu2-gui > /dev/null; then
 killall powermenu2-gui || true
 fi
 
+if /sbin/pidof powermenu2-flashlight > /dev/null; then
+killall powermenu2-flashlight || true
+fi
+
 %preun
 systemctl-user stop powermenu.service
 
@@ -98,6 +102,10 @@ if /sbin/pidof powermenu2-gui > /dev/null; then
 killall powermenu2-gui || true
 fi
 
+if /sbin/pidof powermenu2-flashlight > /dev/null; then
+killall powermenu2-flashlight || true
+fi
+
 %post
 systemctl-user restart powermenu.service
 
@@ -112,13 +120,15 @@ if [ -d /var/lib/patchmanager/ausmt/patches/sailfishos-ambience-powermenu2 ]; th
 fi
 
 %files
-%defattr(-,root,root,644)
 %attr(4755, root, root) %{_bindir}/powermenu2-daemon
-%{_bindir}/powermenu2-gui
+%attr(4755, root, root) %{_bindir}/powermenu2-flashlight
+%attr(0755, root, root) %{_bindir}/powermenu2-gui
+%defattr(644,root,root,-)
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 %{_datadir}/powermenu2
 %{_datadir}/dbus-1/services/org.coderus.powermenu.service
+%{_datadir}/dbus-1/services/org.coderus.powermenu.flashlight.service
 %{_libdir}/libpowermenutools.so
 %{_libdir}/qt5/qml/org/coderus/powermenu
 %{_libdir}/systemd/user/*.service
@@ -126,5 +136,5 @@ fi
 %{_datadir}/lipstick/quickactions/org.coderus.powermenu.conf
 
 %files -n sailfishos-ambience-powermenu2
-%defattr(-,root,root,644)
+%defattr(644,root,root,-)
 %{_datadir}/patchmanager/patches/sailfishos-ambience-powermenu2

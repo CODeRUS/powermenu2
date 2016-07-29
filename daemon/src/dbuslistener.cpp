@@ -12,6 +12,10 @@
 #include <mlite5/MGConfItem>
 #include <QDebug>
 
+#include <unistd.h>
+#include <grp.h>
+#include <pwd.h>
+
 DBusListener::DBusListener(QObject *parent) :
     QObject(parent)
 {
@@ -31,6 +35,11 @@ void DBusListener::startService()
                              MCE_REQUEST_PATH,
                              MCE_REQUEST_IFACE,
                              QDBusConnection::systemBus(), this);
+
+    flashlight = new QDBusInterface("org.coderus.powermenu.flashlight",
+                             "/",
+                             "org.coderus.powermenu.flashlight",
+                             QDBusConnection::sessionBus(), this);
 
     qDebug() << "DBus service" << (QDBusConnection::sessionBus().registerService("org.coderus.powermenu") ? "registered" : "error!");
     qDebug() << "DBus object" << (QDBusConnection::sessionBus().registerObject("/", this,
@@ -284,7 +293,7 @@ void DBusListener::powerButtonTrigger(const QString &triggerName)
         ScreenshotControl::GetInstance()->save();
     }
     else if (triggerName == "flashlight") {
-        FlashlightControl::GetInstance()->toggle();
+        flashlight->call(QDBus::NoBlock, "toggle");
     }
     else if (triggerName.startsWith("event")) {
         MGConfItem shortcut(QString("/apps/powermenu/applicationShortcut%1").arg(triggerName.mid(5)));
