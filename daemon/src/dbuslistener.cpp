@@ -36,11 +36,6 @@ void DBusListener::startService()
                              MCE_REQUEST_IFACE,
                              QDBusConnection::systemBus(), this);
 
-    flashlight = new QDBusInterface("org.coderus.powermenu.flashlight",
-                             "/",
-                             "org.coderus.powermenu.flashlight",
-                             QDBusConnection::sessionBus(), this);
-
     qDebug() << "DBus service" << (QDBusConnection::sessionBus().registerService("org.coderus.powermenu") ? "registered" : "error!");
     qDebug() << "DBus object" << (QDBusConnection::sessionBus().registerObject("/", this,
                                                  QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties)
@@ -293,7 +288,7 @@ void DBusListener::powerButtonTrigger(const QString &triggerName)
         ScreenshotControl::GetInstance()->save();
     }
     else if (triggerName == "flashlight") {
-        flashlight->call(QDBus::NoBlock, "toggle");
+        FlashlightControl::GetInstance()->toggle();
     }
     else if (triggerName.startsWith("event")) {
         MGConfItem shortcut(QString("/apps/powermenu/applicationShortcut%1").arg(triggerName.mid(5)));

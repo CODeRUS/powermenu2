@@ -12,13 +12,28 @@ DBusListener::DBusListener(QObject *parent) :
 {
 }
 
-void DBusListener::toggle()
+void DBusListener::setActive(bool active)
 {
-    FlashlightControl::GetInstance()->toggle();
+    qDebug() << active;
+
+    QStringList controls;
+    controls << "/sys/kernel/debug/flash_adp1650/mode";
+    controls << "/sys/class/leds/torch-flash/flash_light";
+    controls << "/sys/class/leds/led:flash_torch/brightness";
+    controls << "/sys/class/leds/torch-light0/brightness";
+
+    foreach (const QString & control, controls) {
+        QFile flash(control);
+        if (flash.exists() && flash.open(QFile::WriteOnly)) {
+            flash.write(active ? "1" : "0");
+            flash.close();
+        }
+    }
 }
 
 void DBusListener::quit()
 {
+    qDebug() << "0";
     QCoreApplication::instance()->quit();
 }
 

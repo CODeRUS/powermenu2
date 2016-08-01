@@ -120,7 +120,6 @@ private:
 
     QQuickView *view;
     QDBusInterface *mce;
-    QDBusInterface *flashlight;
 
     ScreenshotAnimation *anim;
 

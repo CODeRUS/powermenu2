@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <mlite5/MGConfItem>
+#include <QtDBus>
 
 class Q_DECL_EXPORT FlashlightControl : public QObject
 {
@@ -19,6 +20,7 @@ public:
 
 private:
     MGConfItem *flashlightStatus;
+    QDBusInterface *flashlight;
 
 signals:
     void activeChanged();

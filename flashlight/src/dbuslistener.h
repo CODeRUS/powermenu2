@@ -15,7 +15,7 @@ public:
     explicit DBusListener(QObject *parent = 0);
 
 public slots:
-    Q_SCRIPTABLE void toggle();
+    Q_SCRIPTABLE void setActive(bool active);
     Q_SCRIPTABLE void quit();
 
 public slots:
