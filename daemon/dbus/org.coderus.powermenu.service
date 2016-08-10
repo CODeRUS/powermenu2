@@ -1,4 +1,5 @@
 [D-BUS Service]
 Name=org.coderus.powermenu
-Exec=/usr/bin/invoker -s --type=silica-qt5 /usr/bin/powermenu2-daemon
+Interface=org.coderus.powermenu
+Exec=/bin/false
 SystemdService=powermenu.service

@@ -8,7 +8,7 @@ Item {
 
     property alias name: label.text
     property alias icon: image.source
-    property bool active: false
+    property bool active: expanded || false
     property bool pressed: false
     property bool highlighted: !editMode && (active || pressed)
     property bool disabled: false
@@ -19,6 +19,8 @@ Item {
 
     property string settingsPage
     property bool hideAfterClick: false
+
+    property Component expandComponent
 
     enabled: editMode ? !hidden : !disabled
 
@@ -80,7 +82,7 @@ Item {
         font.pixelSize: Theme.fontSizeExtraSmall
         color: root.highlighted ? Theme.highlightColor : Theme.primaryColor
         truncationMode: TruncationMode.Fade
-        horizontalAlignment: paintedWidth > width ? Text.AlignLeft : Text.AlignHCenter
+        horizontalAlignment: implicitWidth > width ? Text.AlignLeft : Text.AlignHCenter
     }
 
     DBusInterface {

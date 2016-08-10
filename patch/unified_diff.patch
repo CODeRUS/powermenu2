@@ -1,5 +1,5 @@
 diff --git a/PowerKeyMenu.qml b/PowerKeyMenu.qml
-index 40929e3..470018f 100644
+index 40929e3..5fa7a4f 100644
 --- a/usr/share/lipstick-jolla-home-qt5/powerkey/PowerKeyMenu.qml
 +++ b/usr/share/lipstick-jolla-home-qt5/powerkey/PowerKeyMenu.qml
 @@ -9,6 +9,7 @@ import com.jolla.lipstick 0.1
@@ -10,7 +10,7 @@ index 40929e3..470018f 100644
  
  SilicaListView {
      id: powerMenu
-@@ -86,104 +87,59 @@ SilicaListView {
+@@ -86,104 +87,73 @@ SilicaListView {
          category: "x-jolla.ambience.preview"
      }
  
@@ -99,8 +99,15 @@ index 40929e3..470018f 100644
 +                anchors.horizontalCenter: parent.horizontalCenter
 +                onCloseClicked: {
 +                    Lipstick.compositor.appLayer._closeDismissedWindow = true
-+                    Lipstick.compositor.appLayer.close()
++                    Lipstick.compositor.appLayer.closed()
 +                    Lipstick.compositor.powerKeyLayer.hide()
++                }                
++
++                Connections {
++                    target: powerMenu
++                    onExposedChanged: {
++                        controlRow1.editMode = false
++                    }
 +                }
              }
  
@@ -115,16 +122,23 @@ index 40929e3..470018f 100644
 -                onClicked: powerMenu.reboot()
 -
 -                iconSource: "image://theme/graphic-reboot"
+-
+-                ConfigurationValue {
+-                    id: rebootActionConfig
 +            TogglesArea {
 +                id: togglesArea
-+                height: togglesArea.contentHeight
++                height: togglesArea.contentHeight + togglesArea.expandedHeight
 +                width: headerItem.width - sideMargin
 +                editMode: controlRow1.editMode
 +                onHideWithCare: Lipstick.compositor.powerKeyLayer.hide()
++
++                Connections {
++                    target: powerMenu
++                    onExposedChanged: {
++                        togglesArea.collapse()
++                    }
++                }
  
--                ConfigurationValue {
--                    id: rebootActionConfig
--
 -                    key: "/desktop/jolla/reboot_action_enabled"
 -                    defaultValue: false
 +                Behavior on height {

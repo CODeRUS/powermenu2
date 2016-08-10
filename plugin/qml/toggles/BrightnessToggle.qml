@@ -11,12 +11,26 @@ ToggleItem {
     icon: "image://theme/icon-m-day"
     settingsPage: "system_settings/look_and_feel/display"
 
+    expandComponent: Component {
+        Item {
+            Slider {
+                anchors.centerIn: parent
+                width: parent.width
+                minimumValue: 1
+                maximumValue: 100
+                stepSize: 1
+                value: displaySettings.brightness
+                onValueChanged: displaySettings.brightness = Math.round(value)
+            }
+        }
+    }
+
     onClicked: {
-        if (displaySettings.brightness == 100) {
+        if (displaySettings.brightness >= 100) {
             displaySettings.brightness = 1
         }
         else {
-            displaySettings.brightness = Math.round((displaySettings.brightness + 10) / 10) * 10
+            displaySettings.brightness = Math.ceil((displaySettings.brightness + 1) / 10) * 10
         }
     }
 

@@ -1,4 +1,4 @@
-import QtQuick 2.1
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 import org.nemomobile.dbus 2.0
 import org.coderus.powermenu 1.0
@@ -51,16 +51,16 @@ MainWindow {
 
     SequentialAnimation {
         id: testAppear
-        NumberAnimation {
+        YAnimator {
             target: testItem2
-            property: "y"
+            //property: "y"
             from: -testItem2.height
             to: 0
             duration: Math.max(testItem2.height, 0) / 2
         }
-        NumberAnimation {
+        YAnimator {
             target: testItem1
-            property: "y"
+            //property: "y"
             from: -testItem1.height
             to: testItem2.height
             duration: Math.max(testItem1.height, 0) / 2
@@ -69,16 +69,16 @@ MainWindow {
 
     SequentialAnimation {
         id: testDisappear
-        NumberAnimation {
+        YAnimator {
             target: testItem1
-            property: "y"
+            //property: "y"
             from: testItem2.height
             to: -testItem1.height
             duration: Math.max(testItem1.height, 0) / 2
         }
-        NumberAnimation {
+        YAnimator {
             target: testItem2
-            property: "y"
+            //property: "y"
             from: 0
             to: -testItem2.height
             duration: Math.max(testItem2.height, 0) / 2
@@ -86,6 +86,7 @@ MainWindow {
         ScriptAction {
             script: {
                 controlRow1.editMode = false
+                grid.collapse()
                 view.close()
             }
         }
@@ -95,7 +96,7 @@ MainWindow {
         id: testItem1
         width: parent.width
         color: Theme.highlightDimmerColor
-        height: Math.min(grid.contentHeight + Theme.horizontalPageMargin, grid.height)
+        height: Math.min(grid.contentHeight + Theme.horizontalPageMargin, grid.height) + grid.expandedHeight
         y: -Screen.height
 
         Behavior on height {
@@ -105,7 +106,7 @@ MainWindow {
         TogglesArea {
             id: grid
             width: parent.width - sideMargin
-            height: window.contentItem.height - testItem2.height - Theme.horizontalPageMargin * 4
+            height: window.contentItem.height - testItem2.height - Theme.horizontalPageMargin * 4 + grid.expandedHeight
             editMode: controlRow1.editMode
             onHideWithCare: window.hideWithCare()
         }

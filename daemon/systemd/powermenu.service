@@ -7,7 +7,4 @@ After=lipstick.service
 Type=dbus
 ExecStart=/usr/bin/invoker -s --type=silica-qt5 /usr/bin/powermenu2-daemon
 BusName=org.coderus.powermenu
-Restart=always
-
-[Install]
-WantedBy=post-user-session.target
+Restart=on-failure

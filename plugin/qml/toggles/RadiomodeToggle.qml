@@ -13,12 +13,45 @@ ToggleItem {
     property string currentModem: manager.defaultModem
     property var modes1: ["any", "umts", "gsm"]
     property var modes2: ["any", "lte", "umtslte", "umts", "gsmumts", "gsm"]
-    property var labels1: ["Any", "4G", "3G+2G"]
+    property var labels1: ["4G", "3G", "2G"]
     property var labels2: ["Any", "4G", "4G+3G", "3G", "3G+2G", "2G"]
     property var preferences: modes1
     property var labels: labels1
     property bool _externalChange: false
     property int currentIndex: 0
+
+    expandComponent: Component {
+        ListView {
+            orientation: ListView.Horizontal
+            delegate: Loader {
+                width: root.width
+                height: root.height
+                sourceComponent: textLabel
+                property string title: modelData
+                property int pixelSize: height / 2
+                property bool itemHighlight: ListView.isCurrentItem
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        radioSettings.technologyPreference = preferences[index]
+                    }
+                }
+            }
+            currentIndex: root.currentIndex
+            boundsBehavior: ListView.StopAtBounds
+            highlight: Component {
+                Rectangle {
+                    color: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity / 2)
+                }
+            }
+            highlightFollowsCurrentItem: true
+
+            model: labels
+
+            HorizontalScrollDecorator {}
+        }
+    }
 
     function dummyTr() {
         qsTr("Any")
@@ -61,18 +94,28 @@ ToggleItem {
         _externalChange = false
     }
 
-    Label {
+    Loader {
         anchors.top: parent.top
         anchors.bottom: labelItem.top
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.margins: Theme.paddingMedium
-        font.pixelSize: height
-        fontSizeMode: Text.HorizontalFit
-        text: qsTr(labels[currentIndex])
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        color: highlighted ? Theme.highlightColor : Theme.primaryColor
+        sourceComponent: textLabel
+        property string title: qsTr(labels[currentIndex] || "")
+        property int pixelSize: height
+        property bool itemHighlight: highlighted
+    }
+
+    Component {
+        id: textLabel
+        Label {
+            font.pixelSize: pixelSize
+            fontSizeMode: Text.HorizontalFit
+            text: title
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: itemHighlight ? Theme.highlightColor : Theme.primaryColor
+        }
     }
 
     FileUtils {

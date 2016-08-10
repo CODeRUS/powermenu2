@@ -13,6 +13,40 @@ ToggleItem {
     settingsPage: "system_settings/connectivity/usb"
     disabled: !itemsPopulated
 
+    expandComponent: Component {
+        ListView {
+            orientation: ListView.Horizontal
+            delegate: Loader {
+                width: root.width
+                height: root.height
+                sourceComponent: Component {
+                    IconItem {
+                        name: modelData.menuText
+                        icon: "image://theme/icon-m-usb"
+                        active: false
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: usbSettings.configMode = availableModes[index].mode
+                        }
+                    }
+                }
+            }
+            currentIndex: currentModeIndex(usbSettings.configMode)
+            boundsBehavior: ListView.StopAtBounds
+            highlight: Component {
+                Rectangle {
+                    color: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity / 2)
+                }
+            }
+            highlightFollowsCurrentItem: true
+
+            model: availableModes
+
+            HorizontalScrollDecorator {}
+        }
+    }
+
     onClicked: {
         for (var i = 0; i < availableModes.length; i++) {
             var item = availableModes[i]
@@ -135,6 +169,19 @@ ToggleItem {
         }
         //% "Currently not connected"
         return qsTrId("settings_usb-la-not_connected")
+    }
+
+    function currentModeIndex(mode)
+    {
+        if (mode && mode != usbSettings.MODE_UNDEFINED) {
+            for (var i = 0; i < availableModes.length; i++) {
+                var item = availableModes[i]
+                if (item.mode == mode) {
+                    return i
+                }
+            }
+        }
+        return -1
     }
 
     function createItems()
