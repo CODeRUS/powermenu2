@@ -162,7 +162,7 @@ GridView {
                                 itemDelegate.posX = newPos.x - itemDelegate.width / 2
                                 itemDelegate.posY = newPos.y - itemDelegate.height
                             }
-                            else if (loaderDelegate.item.expandComponent) {
+                            else if (loaderDelegate.item.expandComponent && !loaderDelegate.item.disabled) {
                                 grid.currentIndex = index
                             }
                         }
