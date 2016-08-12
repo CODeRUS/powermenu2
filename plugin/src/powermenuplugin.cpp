@@ -4,6 +4,7 @@
 #include "src/translator.h"
 #include "../libpowermenutools/src/screenshotcontrol.h"
 #include "../libpowermenutools/src/flashlightcontrol.h"
+#include "../libpowermenutools/src/pulseaudiocontrol.h"
 
 #include <qqml.h>
 #include <QtQml>
@@ -24,6 +25,14 @@ static QObject *flashlight_singleton_provider(QQmlEngine *engine, QJSEngine *scr
     return FlashlightControl::GetInstance();
 }
 
+static QObject *pulseaudio_singleton_provider(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine);
+    Q_UNUSED(scriptEngine);
+
+    return PulseAudioControl::GetInstance();
+}
+
 void PowermenuPlugin::registerTypes(const char *uri)
 {
     // @uri org.coderus.powermenu
@@ -31,6 +40,7 @@ void PowermenuPlugin::registerTypes(const char *uri)
     qmlRegisterType<FileUtils>("org.coderus.powermenu", 1, 0, "FileUtils");
     qmlRegisterSingletonType<ScreenshotControl>("org.coderus.powermenu", 1, 0, "Screenshot", screenshot_singleton_provider);
     qmlRegisterSingletonType<FlashlightControl>("org.coderus.powermenu", 1, 0, "Flashlight", flashlight_singleton_provider);
+    qmlRegisterSingletonType<PulseAudioControl>("org.coderus.powermenu", 1, 0, "PulseAudio", pulseaudio_singleton_provider);
     qmlRegisterUncreatableType<Translator>("org.coderus.powermenu", 1, 0, "Translator", "Translator loaded by import");
 }
 

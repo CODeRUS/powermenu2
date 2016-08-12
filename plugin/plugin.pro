@@ -1,7 +1,7 @@
 TEMPLATE = lib
 QT += quick gui-private dbus
 CONFIG += qt plugin link_pkgconfig
-PKGCONFIG += mlite5
+PKGCONFIG += mlite5 dbus-1 dbus-glib-1
 
 TARGET = $$qtLibraryTarget(powermenu)
 target.path = /usr/lib/qt5/qml/org/coderus/powermenu
@@ -49,5 +49,7 @@ OTHER_FILES += \
     qml/toggles/WifinetworkToggle.qml
 
 DISTFILES += \
-    qml/toggles/UsbmodeToggle.qml
+    qml/toggles/UsbmodeToggle.qml \
+    qml/toggles/MediaVolumeToggle.qml \
+    qml/toggles/RingerVolumeToggle.qml
 
