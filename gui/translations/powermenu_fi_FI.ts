@@ -1,25 +1,25 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi_FI" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="gui/qmls/pages/AboutPage.qml" line="176"/>
         <source>About Powermenu 2</source>
-        <translation>Acerca de Powermenu2</translation>
+        <translation>Tietoa PowerMenu2:sta</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/AboutPage.qml" line="241"/>
         <source>Activate product</source>
-        <translation>Activar producto</translation>
+        <translation>Aktivoi tuote</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/AboutPage.qml" line="253"/>
         <source>Enter your PayPal e-mail</source>
-        <translation>Introduce tu correo de PayPal</translation>
+        <translation>Anna PayPal sähköpostiosoitteesi</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/AboutPage.qml" line="254"/>
         <source>PayPal e-mail</source>
-        <translation>Correo de PayPal</translation>
+        <translation>PayPal sähköpostiosoitteesi</translation>
     </message>
 </context>
 <context>
@@ -36,169 +36,169 @@
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="13"/>
         <source>blank</source>
         <comment>Blank display</comment>
-        <translation>apagada</translation>
+        <translation>sammuta näyttö</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="14"/>
         <source>tklock</source>
         <comment>Lock screen</comment>
-        <translation>Bloqueo de pantalla</translation>
+        <translation>näyttölukko</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="15"/>
         <source>devlock</source>
         <comment>Lock device</comment>
-        <translation>Bloqueo del dispositivo</translation>
+        <translation>laitelukitus</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="16"/>
         <source>shutdown</source>
         <comment>Power off</comment>
-        <translation>apagar</translation>
+        <translation>sammutus</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="17"/>
         <source>unblank</source>
         <comment>Unblank display</comment>
-        <translation>encendida</translation>
+        <translation>näyttö päälle</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="18"/>
         <source>tkunlock</source>
         <comment>Unlock screen</comment>
-        <translation>Desbloqueo de pantalla</translation>
+        <translation>näyttölukon avaus</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="19"/>
         <source>vibrate</source>
         <comment>Vibrate</comment>
-        <translation>vibrar</translation>
+        <translation>värinä</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="20"/>
         <source>dbus1</source>
         <comment>Action 1</comment>
-        <translation>Acción 1</translation>
+        <translation>Toiminto 1</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="21"/>
         <source>dbus2</source>
         <comment>Action 2</comment>
-        <translation>Acción 2</translation>
+        <translation>Toiminto 2</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="22"/>
         <source>dbus3</source>
         <comment>Action 3</comment>
-        <translation>Acción 3</translation>
+        <translation>Toiminto 3</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="23"/>
         <source>dbus4</source>
         <comment>Action 4</comment>
-        <translation>Acción 4</translation>
+        <translation>Toiminto 4</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="24"/>
         <source>dbus5</source>
         <comment>Action 5</comment>
-        <translation>Acción 5</translation>
+        <translation>Toiminto 5</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="25"/>
         <source>dbus6</source>
         <comment>Action 6</comment>
-        <translation>Acción 6</translation>
+        <translation>Toiminto 6</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="27"/>
         <source>power-key-menu</source>
         <comment>Sailfish Powermenu</comment>
-        <translation>Menú de encendido Sailfish</translation>
+        <translation>SFOS power-key-menu</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="28"/>
         <source>double-power-key</source>
         <comment>Fast unlock</comment>
-        <translation>Desbloqueo rápido</translation>
+        <translation>Virtapainikkeen kaksoisnapautus</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="29"/>
         <source>powermenu2</source>
         <comment>Powermenu2</comment>
-        <translation>powermenu2</translation>
+        <translation>PowerMenu2</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="30"/>
         <source>flashlight</source>
         <comment>Flashlight</comment>
-        <translation>linterna</translation>
+        <translation>taskulamppu</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="31"/>
         <source>screenshot</source>
         <comment>Screenshot</comment>
-        <translation>Captura</translation>
+        <translation>näytönkaappauskuva</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="87"/>
         <source>No action</source>
-        <translation>Sin acción</translation>
+        <translation>Ei toimintoa</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="145"/>
         <source>Restore to defaults</source>
-        <translation>Restaurar a los valores por defecto</translation>
+        <translation>Palauta oletusasetukset</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="156"/>
         <source>Configuration</source>
-        <translation>Configuración</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="160"/>
         <source>Powerkey configurations</source>
-        <translation>Ajustes del botón de encendido</translation>
+        <translation>Virtanäppäimen asetukset</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="166"/>
         <source>Short press (display on)</source>
-        <translation>Toque corto (pantalla encendida)</translation>
+        <translation>Lyhyt painallus (näyttö päällä)</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="186"/>
         <source>Short press (display off)</source>
-        <translation>Toque corto (pantalla apagada)</translation>
+        <translation>Lyhyt painallus (näyttö kiinni)</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="206"/>
         <source>Long press (display on)</source>
-        <translation>Toque largo (pantalla encendida)</translation>
+        <translation>Pitkä painallus (näyttö päällä)</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="226"/>
         <source>Long press (display off)</source>
-        <translation>Toque largo (pantalla apagada)</translation>
+        <translation>Pitkä painallus (näyttö kiinni)</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="246"/>
         <source>Double press (display on)</source>
-        <translation>Doble toque (pantalla encendida)</translation>
+        <translation>Tuplapainallus (näyttö päällä)</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="266"/>
         <source>Double press (display off)</source>
-        <translation>Doble toque (pantalla apagada)</translation>
+        <translation>Tuplapainallus (näyttö kiinni)</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="284"/>
         <source>Timings configurations</source>
-        <translation>Ajustes de las duraciones</translation>
+        <translation>Viive-asetukset</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="289"/>
         <source>Longpress delay</source>
-        <translation>Duración del doble toque</translation>
+        <translation>Pitkän painalluksen viive</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="294"/>
@@ -209,133 +209,133 @@
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="300"/>
         <source>Doublepress delay</source>
-        <translation>Duración del doble toque</translation>
+        <translation>Tupla-painalluksen viive</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="310"/>
         <source>Actions configurations</source>
-        <translation>Ajustes de las acciones</translation>
+        <translation>Toimintojen asetukset</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="316"/>
         <source>Action 1</source>
-        <translation>Acción 1</translation>
+        <translation>Toiminto 1</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="322"/>
         <source>event1</source>
         <comment>Application 1</comment>
-        <translation>Aplicación 1</translation>
+        <translation>Sovellus 1</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="340"/>
         <source>Application 1</source>
-        <translation>Aplicación 1</translation>
+        <translation>Sovellus 1</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="352"/>
         <source>Action 2</source>
-        <translation>Acción 2</translation>
+        <translation>Toiminto 2</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="358"/>
         <source>event2</source>
         <comment>Application 2</comment>
-        <translation>Aplicación 2</translation>
+        <translation>Sovellus 2</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="376"/>
         <source>Application 2</source>
-        <translation>Aplicación 2</translation>
+        <translation>Sovellus 2</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="388"/>
         <source>Action 3</source>
-        <translation>Acción 3</translation>
+        <translation>Toiminto 3</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="394"/>
         <source>event3</source>
         <comment>Application 3</comment>
-        <translation>Aplicación 3</translation>
+        <translation>Sovellus 3</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="412"/>
         <source>Application 3</source>
-        <translation>Aplicación 3</translation>
+        <translation>Sovellus 3</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="424"/>
         <source>Action 4</source>
-        <translation>Acción 4</translation>
+        <translation>Toiminto 4</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="430"/>
         <source>event4</source>
         <comment>Application 4</comment>
-        <translation>Aplicación 4</translation>
+        <translation>Sovellus 4</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="448"/>
         <source>Application 4</source>
-        <translation>Aplicación 4</translation>
+        <translation>Sovellus 4</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="460"/>
         <source>Action 5</source>
-        <translation>Acción 5</translation>
+        <translation>Toiminto 5</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="466"/>
         <source>event5</source>
         <comment>Application 5</comment>
-        <translation>Aplicación 5</translation>
+        <translation>Sovellus 5</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="484"/>
         <source>Application 5</source>
-        <translation>Aplicación 5</translation>
+        <translation>Sovellus 5</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="496"/>
         <source>Action 6</source>
-        <translation>Acción 6</translation>
+        <translation>Toiminto 6</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="502"/>
         <source>event6</source>
         <comment>Application 6</comment>
-        <translation>Aplicación 6</translation>
+        <translation>Sovellus 6</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="520"/>
         <source>Application 6</source>
-        <translation>Aplicación 6</translation>
+        <translation>Sovellus 6</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="530"/>
         <source>Extra stuff</source>
-        <translation>Material extra</translation>
+        <translation>Lisäasetukset</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="535"/>
         <source>Show hidden shortcuts</source>
-        <translation>Mostrar accesos directos ocultos</translation>
+        <translation>Näytä piilotetut pikakuvakkeet</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="536"/>
         <source>Inside settings selector only</source>
-        <translation>Solo ajustes de accesos directos</translation>
+        <translation>Vain asetusten valintaelementille</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="541"/>
         <source>Yes</source>
-        <translation>Sí</translation>
+        <translation>Kyllä</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ConfigurationPage.qml" line="547"/>
         <source>No</source>
-        <translation>No</translation>
+        <translation>Ei</translation>
     </message>
 </context>
 <context>
@@ -343,37 +343,37 @@
     <message>
         <location filename="plugin/qml/ControlRow.qml" line="21"/>
         <source>Reboot device</source>
-        <translation>Reiniciar dispositivo</translation>
+        <translation>Käynnistä laite uudelleen</translation>
     </message>
     <message>
         <location filename="plugin/qml/ControlRow.qml" line="39"/>
         <source>Shutdown device</source>
-        <translation>Apagar dispositivo</translation>
+        <translation>Sammuta laite</translation>
     </message>
     <message>
         <location filename="plugin/qml/ControlRow.qml" line="60"/>
         <source>Shutdown</source>
-        <translation>Apagar</translation>
+        <translation>Sammutus</translation>
     </message>
     <message>
         <location filename="plugin/qml/ControlRow.qml" line="69"/>
         <source>Reboot</source>
-        <translation>Reiniciar</translation>
+        <translation>Uudelleenkäynnistys</translation>
     </message>
     <message>
         <location filename="plugin/qml/ControlRow.qml" line="80"/>
         <source>Close</source>
-        <translation>Cerrar</translation>
+        <translation>Sulje</translation>
     </message>
     <message>
         <location filename="plugin/qml/ControlRow.qml" line="91"/>
         <source>Edit mode</source>
-        <translation>Modo edición</translation>
+        <translation>Muokkaustila</translation>
     </message>
     <message>
         <location filename="plugin/qml/ControlRow.qml" line="91"/>
         <source>Lock</source>
-        <translation>Bloquear</translation>
+        <translation>Lukitse</translation>
     </message>
 </context>
 <context>
@@ -383,8 +383,8 @@
         <source>Powermenu
 configurator
 9080</source>
-        <translation>Configurador
-del menú de encendido
+        <translation>Powermenu
+configurator
 9080</translation>
     </message>
 </context>
@@ -393,7 +393,7 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/FlashlightToggle.qml" line="11"/>
         <source>Flashlight</source>
-        <translation>Linterna</translation>
+        <translation>Taskulamppu</translation>
     </message>
 </context>
 <context>
@@ -401,7 +401,7 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/FlightToggle.qml" line="11"/>
         <source>Flight mode</source>
-        <translation>Modo avión</translation>
+        <translation>Lentotila</translation>
     </message>
 </context>
 <context>
@@ -409,7 +409,7 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/LocationToggle.qml" line="11"/>
         <source>Location</source>
-        <translation>Ubicación</translation>
+        <translation>Sijainti</translation>
     </message>
 </context>
 <context>
@@ -417,42 +417,42 @@ del menú de encendido
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="24"/>
         <source>Selected shortcuts</source>
-        <translation>Accesos directos seleccionados</translation>
+        <translation>Valitut pikakuvakkeet</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="30"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Tietoa</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="37"/>
         <source>How to use</source>
-        <translation>Cómo se usa</translation>
+        <translation>Käyttöohjeet</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="44"/>
         <source>Configuration</source>
-        <translation>Configuración</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="54"/>
         <source>Add shortcut</source>
-        <translation>Añadir acceso directo</translation>
+        <translation>Lisää pikakuvake</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="65"/>
         <source>No shortcuts selected</source>
-        <translation>No se han seleccionado accesos directos</translation>
+        <translation>Ei pikakuvakkeita valittuna</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="110"/>
         <source>Delete shortcut</source>
-        <translation>Borrar acceso directo</translation>
+        <translation>Poista pikakuvake</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/MainPage.qml" line="151"/>
         <source>Remove</source>
-        <translation>Eliminar</translation>
+        <translation>Poista</translation>
     </message>
 </context>
 <context>
@@ -460,7 +460,7 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/MobilenetworkToggle.qml" line="11"/>
         <source>Mobile network</source>
-        <translation>Red móvil</translation>
+        <translation>Mobiiliverkko</translation>
     </message>
 </context>
 <context>
@@ -468,17 +468,17 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/OrientationlockToggle.qml" line="14"/>
         <source>Portrait</source>
-        <translation>Vertical</translation>
+        <translation>Pystyasento</translation>
     </message>
     <message>
         <location filename="plugin/qml/toggles/OrientationlockToggle.qml" line="17"/>
         <source>Landscape</source>
-        <translation>Apaisado</translation>
+        <translation>Vaaka-asento</translation>
     </message>
     <message>
         <location filename="plugin/qml/toggles/OrientationlockToggle.qml" line="20"/>
         <source>Dynamic</source>
-        <translation>Dinámico</translation>
+        <translation>Dynaaminen</translation>
     </message>
 </context>
 <context>
@@ -486,7 +486,7 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/PowersaveToggle.qml" line="25"/>
         <source>Battery powersave thresold</source>
-        <translation>Umbral de ahorro de energía de la batería</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -494,12 +494,12 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="9"/>
         <source>Radio mode</source>
-        <translation>Modo de red</translation>
+        <translation>Radion tila</translation>
     </message>
     <message>
         <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="57"/>
         <source>Any</source>
-        <translation>Auto</translation>
+        <translation>Mikä tahansa</translation>
     </message>
     <message>
         <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="58"/>
@@ -532,7 +532,7 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/ScreenshotToggle.qml" line="9"/>
         <source>Screenshot</source>
-        <translation>Captura</translation>
+        <translation>Näytönkaappauskuva</translation>
     </message>
 </context>
 <context>
@@ -540,17 +540,17 @@ del menú de encendido
     <message>
         <location filename="gui/qmls/pages/ShortcutsPage.qml" line="25"/>
         <source>Hide search field</source>
-        <translation>Ocultar campo de búsqueda</translation>
+        <translation>Piilota hakukenttä</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ShortcutsPage.qml" line="26"/>
         <source>Show search field</source>
-        <translation>Mostrar campo de búsqueda</translation>
+        <translation>Näytä hakukenttä</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/ShortcutsPage.qml" line="40"/>
         <source>Select shortcuts</source>
-        <translation>Seleccionar accesos directos</translation>
+        <translation>Valitse pikakuvakkeet</translation>
     </message>
 </context>
 <context>
@@ -558,7 +558,7 @@ del menú de encendido
     <message>
         <location filename="plugin/qml/toggles/TetheringToggle.qml" line="12"/>
         <source>Tethering</source>
-        <translation>Compartir Internet</translation>
+        <translation>Yhteyden jako</translation>
     </message>
 </context>
 <context>
@@ -566,22 +566,13 @@ del menú de encendido
     <message>
         <location filename="gui/qmls/pages/UsagePage.qml" line="19"/>
         <source>How to use</source>
-        <translation>Cómo se usa</translation>
+        <translation>Käyttöohjeet</translation>
     </message>
     <message>
         <location filename="gui/qmls/pages/UsagePage.qml" line="23"/>
         <source>Powermenu should be configured before any usage. Translate this string as explanation of basic powermenu usage including configuration of powerkey actions to open powermenu2 instead of default sailfish one, or any other additional hints.</source>
-        <translation>El menú de encendido debería configurarse antes de cualquier uso.
-Los ajustes del menú de encendido, duraciones y acciones se almacenan en la configuración del sistema, por tanto, antes de desinstalar esta aplicación deberías restaurar a los valores por defecto.
-Consejos:
-- Al hacer doble clic en el icono de bloqueo de pantalla se bloqueará el dispositivo con código de bloqueo
-- Al hacer doble clic en algunos interruptores o iconos de aplicaciones se abrirá la correspondiente página de ajustes
-- Si mantienes pulsado el icono de bloqueo de pantalla se activa el modo de edición
-- En el modo de edición puedes reordenar los elementos dejando pulsado el icono que deseas mover y soltándolo en el lugar deseado
-- En el modo de edición puedes desactivar los interruptores que no uses haciendo un sólo clic sobre el icono
-- Si mantienes pulsado el icono de reiniciar se reinicia la pantalla de inicio
-- Puedes añadir Powermenu2 como acción rápida en la pantalla de eventos
-- Puedes añadir y eliminar accesos directos de aplicaciones sólo desde la página de ajustes</translation>
+        <translation>PowerMenu2 asetukset tulisi käydä läpi aina ennen ensimmäistä käyttöä. Asetuksissa voit valita virtanäppäimen painallukselle useita eri käyttötarkoituksia, joilla voit korvata tavallisen asetusvalikon.
+Käyttöönotto (ensimmäinen kerta): Valitse asetusten kohdassa &quot;Toiminto 3&quot; powermenu2, ja &quot;Pitkä painallus (näyttö päällä)&quot; powermenu2.</translation>
     </message>
 </context>
 <context>
@@ -589,7 +580,7 @@ Consejos:
     <message>
         <location filename="plugin/qml/toggles/VibrationToggle.qml" line="10"/>
         <source>Vibration</source>
-        <translation>Vibración</translation>
+        <translation>Värinä</translation>
     </message>
 </context>
 <context>
@@ -597,7 +588,7 @@ Consejos:
     <message>
         <location filename="plugin/qml/toggles/WifinetworkToggle.qml" line="14"/>
         <source>Wireless</source>
-        <translation>WiFi</translation>
+        <translation>WLAN</translation>
     </message>
 </context>
 </TS>

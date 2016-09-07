@@ -341,32 +341,37 @@
 <context>
     <name>ControlRow</name>
     <message>
-        <location filename="plugin/qml/ControlRow.qml" line="18"/>
+        <location filename="plugin/qml/ControlRow.qml" line="21"/>
         <source>Reboot device</source>
         <translation>Gerät neu starten</translation>
     </message>
     <message>
-        <location filename="plugin/qml/ControlRow.qml" line="36"/>
+        <location filename="plugin/qml/ControlRow.qml" line="39"/>
         <source>Shutdown device</source>
         <translation>Gerät herunterfahren</translation>
     </message>
     <message>
-        <location filename="plugin/qml/ControlRow.qml" line="57"/>
+        <location filename="plugin/qml/ControlRow.qml" line="60"/>
         <source>Shutdown</source>
         <translation>Herunterfahren</translation>
     </message>
     <message>
-        <location filename="plugin/qml/ControlRow.qml" line="65"/>
+        <location filename="plugin/qml/ControlRow.qml" line="69"/>
         <source>Reboot</source>
         <translation>Neustart</translation>
     </message>
     <message>
-        <location filename="plugin/qml/ControlRow.qml" line="74"/>
+        <location filename="plugin/qml/ControlRow.qml" line="80"/>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <location filename="plugin/qml/ControlRow.qml" line="91"/>
         <source>Edit mode</source>
         <translation>Bearbeitungsmodus</translation>
     </message>
     <message>
-        <location filename="plugin/qml/ControlRow.qml" line="74"/>
+        <location filename="plugin/qml/ControlRow.qml" line="91"/>
         <source>Lock</source>
         <translation>Sperre</translation>
     </message>
@@ -386,7 +391,7 @@ configurator
 <context>
     <name>FlashlightToggle</name>
     <message>
-        <location filename="plugin/qml/toggles/FlashlightToggle.qml" line="9"/>
+        <location filename="plugin/qml/toggles/FlashlightToggle.qml" line="11"/>
         <source>Flashlight</source>
         <translation>Taschenlampe</translation>
     </message>
@@ -477,6 +482,14 @@ configurator
     </message>
 </context>
 <context>
+    <name>PowersaveToggle</name>
+    <message>
+        <location filename="plugin/qml/toggles/PowersaveToggle.qml" line="25"/>
+        <source>Battery powersave thresold</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>RadiomodeToggle</name>
     <message>
         <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="9"/>
@@ -484,32 +497,32 @@ configurator
         <translation>Funkmodus</translation>
     </message>
     <message>
-        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="24"/>
+        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="57"/>
         <source>Any</source>
         <translation>Jeden</translation>
     </message>
     <message>
-        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="25"/>
+        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="58"/>
         <source>4G</source>
         <translation>4G</translation>
     </message>
     <message>
-        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="26"/>
+        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="59"/>
         <source>4G+3G</source>
         <translation>4G+3G</translation>
     </message>
     <message>
-        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="27"/>
+        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="60"/>
         <source>3G</source>
         <translation>3G</translation>
     </message>
     <message>
-        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="28"/>
+        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="61"/>
         <source>3G+2G</source>
         <translation>3G+2G</translation>
     </message>
     <message>
-        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="29"/>
+        <location filename="plugin/qml/toggles/RadiomodeToggle.qml" line="62"/>
         <source>2G</source>
         <translation>2G</translation>
     </message>
