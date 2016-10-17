@@ -8,12 +8,6 @@ Page {
     id: page
     objectName: "beginnerPage"
 
-    Component.onCompleted: {
-        console.log("### longPressActionOn:", helper.longPressActionOn)
-        console.log("### doublePressActionOn:", helper.doublePressActionOn)
-        console.log("### doublePressActionOff:", helper.doublePressActionOff)
-    }
-
     SilicaFlickable {
         id: flick
         anchors.fill: page
@@ -35,24 +29,22 @@ Page {
             TextSwitch {
                 width: parent.width
                 text: qsTr("Enable Powermenu2 on long key press")
-                checked: helper.longPressActionOn.indexOf("powermenu2") >= 0
+                checked: helper.action1 == "powermenu2"
                 onCheckedChanged: {
-                    helper.longPressActionOn = checked ? "powermenu2" : "power-key-menu"
+                    helper.longPressActionOn = "dbus1"
+                    helper.action1 = checked ? "powermenu2" : "power-key-menu"
                 }
             }
 
             TextSwitch {
                 width: parent.width
                 text: qsTr("Flashlight on double key press")
-                checked: helper.doublePressActionOn.indexOf("flashlight") >= 0 && helper.doublePressActionOff.indexOf("flashlight") >= 0
+                checked: helper.doublePressActionOff == "dbus3" && helper.doublePressActionOn == "dbus3"
                 onCheckedChanged: {
-                    if (checked) {
-                        helper.doublePressActionOn = "flashlight"
-                        helper.doublePressActionOff = "flashlight"
-                    } else {
-                        helper.doublePressActionOn = "blank,tklock,devlock"
-                        helper.doublePressActionOff = "unblank,tkunlock"
-                    }
+                    helper.doublePressActionOff = checked ? "dbus3" : "unblank,tkunlock,dbus2"
+                    helper.doublePressActionOn = checked ? "dbus3" : "blank,tklock,devlock"
+                    helper.action2 = "double-power-key"
+                    helper.action3 = "flashlight"
                 }
             }
 

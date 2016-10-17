@@ -362,8 +362,11 @@ Page {
                 value: helper.readDesktopName(configurationPowermenu.applicationShortcut1)
                 visible: actionCombo1.currentIndex == 0
                 onClicked: {
-                    var selector = pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {selectedValues: [configurationPowermenu.applicationShortcut1], showHidden: configurationPowermenu.showHiddenShortcuts})
-                    selector.selected.connect(page.selectShortcut1)
+                    pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {
+                        selectedValues: [configurationPowermenu.applicationShortcut1],
+                        showHidden: configurationPowermenu.showHiddenShortcuts,
+                        selectedCallback: page.selectShortcut1
+                    })
                 }
             }
 
@@ -398,8 +401,11 @@ Page {
                 value: helper.readDesktopName(configurationPowermenu.applicationShortcut2)
                 visible: actionCombo2.currentIndex == 0
                 onClicked: {
-                    var selector = pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {selectedValues: [configurationPowermenu.applicationShortcut2], showHidden: configurationPowermenu.showHiddenShortcuts})
-                    selector.selected.connect(page.selectShortcut2)
+                    pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {
+                        selectedValues: [configurationPowermenu.applicationShortcut2],
+                        showHidden: configurationPowermenu.showHiddenShortcuts,
+                        selectedCallback: page.selectShortcut2
+                    })
                 }
             }
 
@@ -434,8 +440,11 @@ Page {
                 value: helper.readDesktopName(configurationPowermenu.applicationShortcut3)
                 visible: actionCombo3.currentIndex == 0
                 onClicked: {
-                    var selector = pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {selectedValues: [configurationPowermenu.applicationShortcut3], showHidden: configurationPowermenu.showHiddenShortcuts})
-                    selector.selected.connect(page.selectShortcut3)
+                    pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {
+                        selectedValues: [configurationPowermenu.applicationShortcut3],
+                        showHidden: configurationPowermenu.showHiddenShortcuts,
+                        selectedCallback: page.selectShortcut3
+                    })
                 }
             }
 
@@ -470,8 +479,11 @@ Page {
                 value: helper.readDesktopName(configurationPowermenu.applicationShortcut4)
                 visible: actionCombo4.currentIndex == 0
                 onClicked: {
-                    var selector = pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {selectedValues: [configurationPowermenu.applicationShortcut4], showHidden: configurationPowermenu.showHiddenShortcuts})
-                    selector.selected.connect(page.selectShortcut4)
+                    pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {
+                        selectedValues: [configurationPowermenu.applicationShortcut4],
+                        showHidden: configurationPowermenu.showHiddenShortcuts,
+                        selectedCallback: page.selectShortcut4
+                    })
                 }
             }
 
@@ -506,8 +518,11 @@ Page {
                 value: helper.readDesktopName(configurationPowermenu.applicationShortcut5)
                 visible: actionCombo5.currentIndex == 0
                 onClicked: {
-                    var selector = pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {selectedValues: [configurationPowermenu.applicationShortcut5], showHidden: configurationPowermenu.showHiddenShortcuts})
-                    selector.selected.connect(page.selectShortcut5)
+                    pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {
+                        selectedValues: [configurationPowermenu.applicationShortcut5],
+                        showHidden: configurationPowermenu.showHiddenShortcuts,
+                        selectedCallback: page.selectShortcut5
+                    })
                 }
             }
 
@@ -542,8 +557,11 @@ Page {
                 value: helper.readDesktopName(configurationPowermenu.applicationShortcut6)
                 visible: actionCombo6.currentIndex == 0
                 onClicked: {
-                    var selector = pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {selectedValues: [configurationPowermenu.applicationShortcut6], showHidden: configurationPowermenu.showHiddenShortcuts})
-                    selector.selected.connect(page.selectShortcut6)
+                    pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {
+                        selectedValues: [configurationPowermenu.applicationShortcut6],
+                        showHidden: configurationPowermenu.showHiddenShortcuts,
+                        selectedCallback: page.selectShortcut6
+                    })
                 }
             }
 

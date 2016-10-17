@@ -113,7 +113,7 @@ QString ShortcutsHelper::getDoublePressActionOff()
             return reply.value();
         }
     }
-    return "unblank,tkunlock";
+    return "unblank,tkunlock,dbus2";
 }
 
 void ShortcutsHelper::setDoublePressActionOn(const QString &action)

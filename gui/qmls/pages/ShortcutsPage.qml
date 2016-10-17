@@ -149,7 +149,7 @@ Page {
 
             onClicked: {
                 if (shortcutsRepeater.enabled) {
-                    selectedCallback(model.path)
+                    page.selectedCallback(model.path)
                     pageStack.pop()
                 }
             }

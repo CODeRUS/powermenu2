@@ -50,7 +50,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Beginner")
                 onClicked: {
-                    pageStack.replace(Qt.resolvedUrl("BeginnerPage.qml"))
+                    pageStack.push(Qt.resolvedUrl("BeginnerPage.qml"))
                 }
             }
 
@@ -58,7 +58,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Expert")
                 onClicked: {
-                    pageStack.replace(Qt.resolvedUrl("ConfigurationPage.qml"))
+                    pageStack.push(Qt.resolvedUrl("ConfigurationPage.qml"))
                 }
             }
         }
