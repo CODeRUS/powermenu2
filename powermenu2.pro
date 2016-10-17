@@ -8,8 +8,8 @@ SUBDIRS = \
     patch \
     $${NULL}
 
-plugin.depends = libpowermenutools
-daemon.depends = libpowermenutools plugin
+plugin.depends = libpowermenutools flashlight
+daemon.depends = libpowermenutools plugin flashlight
 gui.depends = daemon
 
 OTHER_FILES = \

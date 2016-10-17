@@ -8,7 +8,7 @@ CoverBackground {
     Label {
         id: label
         anchors.centerIn: parent
-        text: qsTr("Powermenu\nconfigurator\n9080")
+        text: qsTr("Powermenu\nconfigurator\n9090")
         width: parent.width
         wrapMode: Text.Wrap
         horizontalAlignment: Text.AlignHCenter

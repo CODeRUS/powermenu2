@@ -46,6 +46,8 @@ void DesktopFileSortModel::setFilterShortcuts(const QStringList &newFilter)
     setFilterRegExp(_filterShortcuts.join("|"));
     setSortLocaleAware(!isSortLocaleAware());
     sort(0);
+
+    emit filterShortcutsChanged();
 }
 
 QString DesktopFileSortModel::filter() const
@@ -57,6 +59,8 @@ void DesktopFileSortModel::setFilter(const QString &newFilter)
 {
     _filterString = QRegExp(newFilter, Qt::CaseInsensitive, QRegExp::FixedString);
     setFilterFixedString(newFilter);
+
+    emit filterChanged();
 }
 
 bool DesktopFileSortModel::onlySelected()
@@ -69,6 +73,8 @@ void DesktopFileSortModel::setOnlySelected(bool newValue)
     if (_onlySelected != newValue) {
         _onlySelected = newValue;
         setFilterCaseSensitivity(filterCaseSensitivity() == Qt::CaseInsensitive ? Qt::CaseSensitive : Qt::CaseInsensitive);
+
+        emit onlySelectedChanged();
     }
 }
 
@@ -80,6 +86,8 @@ bool DesktopFileSortModel::showHidden()
 void DesktopFileSortModel::setShowHidden(bool newValue)
 {
     _showHidden = newValue;
+
+    emit showHiddenChanged();
 }
 
 QVariantMap DesktopFileSortModel::get(int itemIndex)

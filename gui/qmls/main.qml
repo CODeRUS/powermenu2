@@ -5,12 +5,10 @@ import "pages"
 
 ApplicationWindow
 {
-    initialPage: Component { MainPage { } }
+    initialPage: Component { WelcomePage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    property alias configurationPowermenu: configuration
-    ConfigurationGroup {
-        id: configuration
+    property ConfigurationGroup configurationPowermenu: ConfigurationGroup {
         path: "/apps/powermenu"
         property string action1: ""
         property string action2: ""

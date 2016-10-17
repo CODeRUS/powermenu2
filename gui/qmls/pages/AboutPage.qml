@@ -25,7 +25,7 @@ Page {
 
             Image {
                 id: img
-                source: "/usr/share/powermenu2/images/sailfish.png"
+                source: "/usr/share/powermenu2/images/sfos.png"
                 property color color: Theme.highlightColor
                 layer.effect: ShaderEffect {
                     id: shaderItem

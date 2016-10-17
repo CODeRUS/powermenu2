@@ -42,10 +42,11 @@ OTHER_FILES += \
     qmls/main.qml \
     qmls/pages/AboutPage.qml \
     qmls/pages/ConfigurationPage.qml \
-    qmls/pages/MainPage.qml \
     qmls/pages/ShortcutsPage.qml \
     qmls/cover/CoverPage.qml \
     qmls/ShaderTiledBackground.qml
 
 DISTFILES += \
-    qmls/pages/UsagePage.qml
+    qmls/pages/UsagePage.qml \
+    qmls/pages/WelcomePage.qml \
+    qmls/pages/BeginnerPage.qml

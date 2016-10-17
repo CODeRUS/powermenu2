@@ -1,5 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import org.coderus.powermenu.desktopfilemodel 1.0
+import org.nemomobile.configuration 1.0
 import ".."
 
 Page {
@@ -10,24 +12,42 @@ Page {
     property var actionValues: ["power-key-menu", "double-power-key", "powermenu2", "flashlight", "screenshot"]
 
     function dummy() {
+        //: Blank display
         qsTr("blank", "Blank display")
+        //: Lock screen
         qsTr("tklock", "Lock screen")
+        //: Lock device
         qsTr("devlock", "Lock device")
+        //: Power off
         qsTr("shutdown", "Power off")
+        //: Unblank display
         qsTr("unblank", "Unblank display")
+        //: Unlock screen
         qsTr("tkunlock", "Unlock screen")
+        //: Vibrate
         qsTr("vibrate", "Vibrate")
+        //: Action 1
         qsTr("dbus1", "Action 1")
+        //: Action 2
         qsTr("dbus2", "Action 2")
+        //: Action 3
         qsTr("dbus3", "Action 3")
+        //: Action 4
         qsTr("dbus4", "Action 4")
+        //: Action 5
         qsTr("dbus5", "Action 5")
+        //: Action 6
         qsTr("dbus6", "Action 6")
 
+        //: Sailfish Powermenu
         qsTr("power-key-menu", "Sailfish Powermenu")
+        //: Fast unlock
         qsTr("double-power-key", "Fast unlock")
+        //: Powermenu2
         qsTr("powermenu2", "Powermenu2")
+        //: Flashlight
         qsTr("flashlight", "Flashlight")
+        //: Screenshot
         qsTr("screenshot", "Screenshot")
     }
 
@@ -141,6 +161,7 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
+            background: Component { ShaderTiledBackground {} }
             MenuItem {
                 text: qsTr("Restore to defaults")
                 onClicked: helper.resetToDefaults()
@@ -527,32 +548,121 @@ Page {
             }
 
             SectionHeader {
-                text: qsTr("Extra stuff")
+                text: qsTr("Custom shortcuts")
             }
 
-            ComboBox {
+            ListView {
                 width: parent.width
-                label: qsTr("Show hidden shortcuts")
-                description: qsTr("Inside settings selector only")
-                currentIndex: configurationPowermenu.showHiddenShortcuts ? 0 : 1
+                height: contentHeight
+                model: desktopModel
+                interactive: false
+                delegate: Component {
+                    ListItem {
+                        id: item
+                        width: ListView.view.width
+                        contentHeight: Theme.itemSizeSmall
+                        ListView.onRemove: animateRemoval(item)
+                        menu: contextMenu
 
-                menu: ContextMenu {
-                    MenuItem {
-                        text: qsTr("Yes")
-                        onClicked: {
-                            configurationPowermenu.showHiddenShortcuts = true
+                        function removeShortcut() {
+                            var itemname = model.path
+                            remorseAction(qsTr("Delete shortcut"),
+                                                 function() {
+                                                     var list = shortcutsConfig.value
+                                                     for (var i = 0; i < list.length; i++) {
+                                                        if (list[i] == itemname) {
+                                                            list.splice(i, 1);
+                                                            break;
+                                                        }
+                                                     }
+                                                     shortcutsConfig.value = list
+                                                 },
+                                                 3000
+                            )
+                        }
+
+                        Image {
+                            id: iconImage
+                            source: model.icon
+                            width: Theme.iconSizeMedium
+                            height: Theme.iconSizeMedium
+                            anchors {
+                                left: parent.left
+                                leftMargin: Theme.horizontalPageMargin
+                                verticalCenter: parent.verticalCenter
+                            }
+                        }
+
+                        Label {
+                            text: model.name
+                            anchors {
+                                left: iconImage.right
+                                leftMargin: Theme.paddingMedium
+                                verticalCenter: parent.verticalCenter
+                            }
+                        }
+
+                        Component {
+                            id: contextMenu
+                            ContextMenu {
+                                MenuItem {
+                                    text: qsTr("Remove")
+                                    onClicked: {
+                                        removeShortcut()
+                                    }
+                                }
+                            }
                         }
                     }
-                    MenuItem {
-                        text: qsTr("No")
-                        onClicked: {
-                            configurationPowermenu.showHiddenShortcuts = false
+                }
+                footer: BackgroundItem {
+                    onClicked: {
+                        pageStack.push(Qt.resolvedUrl("ShortcutsPage.qml"), {
+                            selectedValues: shortcutsConfig.value,
+                            selectedCallback: function(path) {
+                                var list = shortcutsConfig.value
+                                list.splice(list.length, 0, path)
+                                shortcutsConfig.value = list
+                            }
+                        })
+                    }
+
+                    Image {
+                        id: addImage
+                        width: Theme.iconSizeMedium
+                        height: Theme.iconSizeMedium
+                        source: "image://theme/icon-l-add"
+                        anchors {
+                            left: parent.left
+                            leftMargin: Theme.horizontalPageMargin
+                            verticalCenter: parent.verticalCenter
+                        }
+                    }
+
+                    Label {
+                        text: qsTr("Add shortcut")
+                        anchors {
+                            left: addImage.right
+                            leftMargin: Theme.paddingMedium
+                            verticalCenter: parent.verticalCenter
                         }
                     }
                 }
             }
         }
+    }
 
-        VerticalScrollDecorator { flickable: flick }
+
+    ConfigurationValue {
+        id: shortcutsConfig
+        key: "/apps/powermenu/shortcuts"
+        defaultValue: []
+    }
+
+    DesktopFileSortModel {
+        id: desktopModel
+        filterShortcuts: shortcutsConfig.value
+        onlySelected: true
+        showHidden: true
     }
 }

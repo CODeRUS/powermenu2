@@ -8,10 +8,10 @@ Page {
     id: page
     objectName: "shortcutsPage"
 
-    signal selected(string path)
     property bool searchEnabled: false
-    property bool showHidden: false
     property variant selectedValues: []
+
+    property var selectedCallback
 
     SilicaFlickable {
         id: view
@@ -20,6 +20,12 @@ Page {
 
         PullDownMenu {
             background: Component { ShaderTiledBackground {} }
+            MenuItem {
+                text: configurationPowermenu.showHiddenShortcuts ? qsTr("Do not show hidden shortcuts") : qsTr("Show hidden shortcuts")
+                onClicked: {
+                    configurationPowermenu.showHiddenShortcuts = !configurationPowermenu.showHiddenShortcuts
+                }
+            }
             MenuItem {
                 text: searchEnabled
                       ? qsTr("Hide search field")
@@ -73,13 +79,14 @@ Page {
                 }
             }
 
-
-            Repeater {
+            ListView {
                 id: shortcutsRepeater
                 delegate: shortcutDelegate
                 model: desktopModel
                 width: parent.width
+                height: contentHeight
                 enabled: false
+                interactive: false
             }
         }
 
@@ -96,9 +103,15 @@ Page {
     DesktopFileSortModel {
         id: desktopModel
         filter: searchField.text
-        showHidden: page.showHidden
+        showHidden: configurationPowermenu.showHiddenShortcuts
         onDataFillEnd: {
             shortcutsRepeater.enabled = true
+        }
+        onShowHiddenChanged: {
+            if (shortcutsRepeater.enabled) {
+                shortcutsRepeater.enabled = false
+                fillData(showHidden)
+            }
         }
     }
 
@@ -107,15 +120,15 @@ Page {
         BackgroundItem {
             id: item
             width: parent.width
-            contentHeight: 110
-            height: 110
+            contentHeight: Theme.itemSizeMedium
+            height: Theme.itemSizeMedium
             highlighted: down || selectedValues.indexOf(model.path) >= 0
 
             Image {
                 id: iconImage
                 source: model.icon
-                width: 86
-                height: 86
+                width: Theme.iconSizeLauncher
+                height: Theme.iconSizeLauncher
                 smooth: true
                 anchors {
                     left: parent.left
@@ -136,7 +149,7 @@ Page {
 
             onClicked: {
                 if (shortcutsRepeater.enabled) {
-                    selected(model.path)
+                    selectedCallback(model.path)
                     pageStack.pop()
                 }
             }
